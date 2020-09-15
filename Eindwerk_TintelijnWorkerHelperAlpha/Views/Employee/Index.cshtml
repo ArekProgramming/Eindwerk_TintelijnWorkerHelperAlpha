@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Eindwerk_TintelijnWorkerHelperAlpha.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center"><i class="fas fa-skull-crossbones" aria-hidden="true"></i> Employee List <i class="fas fa-skull-crossbones" aria-hidden="true"></i></h1>
+
+<div id="view-all">
+    @await Html.PartialAsync("_ViewAll", Model)
+</div>
+
