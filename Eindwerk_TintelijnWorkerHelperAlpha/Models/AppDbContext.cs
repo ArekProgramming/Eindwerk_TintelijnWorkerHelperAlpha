@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Eindwerk_TintelijnWorkerHelperAlpha.Models;
 
 namespace Eindwerk_TintelijnWorkerHelperAlpha.Models
 {
@@ -15,8 +16,9 @@ namespace Eindwerk_TintelijnWorkerHelperAlpha.Models
         }
 
         public DbSet<Employee> Employees { get; set; }
-       // public DbSet<Address> Addresses { get; set; }
-       // public DbSet<ConstructionSite> ConstructionSites { get; set; }
+        
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<ConstructionSite> ConstructionSites { get; set; }
 
        // public DbSet<WorkInput> WorkInputs { get; set; }
     }

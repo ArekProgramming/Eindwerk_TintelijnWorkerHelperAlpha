@@ -1,0 +1,73 @@
+﻿@model Eindwerk_TintelijnWorkerHelperAlpha.ViewModels.AddOrEditConstructionSiteViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddOrEdit" asp-route-id="@Model.ConstructionSite.ConstructionSiteId" onsubmit="return jQueryAjaxPost(this);" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="@Model.ConstructionSite.ConstructionSiteId" />
+            <input type="hidden" asp-for="@Model.Address.AddressId" />
+
+            <div class="form-group">
+                <label asp-for="@Model.ConstructionSite.ClientName" class="control-label"></label>
+                <input asp-for="@Model.ConstructionSite.ClientName" class="form-control" />
+                <span asp-validation-for="@Model.ConstructionSite.ClientName" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label asp-for="@Model.Address.StreetName" class="control-label"></label>
+                        <input asp-for="@Model.Address.StreetName" class="form-control" />
+                        <span asp-validation-for="@Model.Address.StreetName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="@Model.Address.HouseNumber" class="control-label"></label>
+                        <input asp-for="@Model.Address.HouseNumber" class="form-control" />
+                        <span asp-validation-for="@Model.Address.HouseNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label asp-for="@Model.Address.City" class="control-label"></label>
+                        <input asp-for="@Model.Address.City" class="form-control" />
+                        <span asp-validation-for="@Model.Address.City" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="@Model.Address.PostalCode" class="control-label"></label>
+                        <input asp-for="@Model.Address.PostalCode" class="form-control" />
+                        <span asp-validation-for="@Model.Address.PostalCode" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="@Model.ConstructionSite.IsActive" /> @Html.DisplayNameFor(model => model.ConstructionSite.IsActive)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

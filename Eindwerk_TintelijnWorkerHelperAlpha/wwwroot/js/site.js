@@ -33,14 +33,11 @@ jQueryAjaxPost = form => {
                 else {
                     $("#form-modal .modal-body").html(res.html);
                 }
-
             },
             error: function (err) {
                 console.log(err)
             }
         })
-
-
 
     } catch (e) {
         console.log(e);

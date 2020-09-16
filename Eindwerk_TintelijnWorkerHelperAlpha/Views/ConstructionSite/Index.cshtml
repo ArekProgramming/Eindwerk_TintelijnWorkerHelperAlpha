@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Eindwerk_TintelijnWorkerHelperAlpha.Models.ConstructionSite>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center text-info"><i class="fas fa-building text-info"></i> Construction Sites <i class="fas fa-building text-info"></i></h1>
+
+<div id="view-all">
+    @await Html.PartialAsync("_ViewAll", Model)
+</div>
+
